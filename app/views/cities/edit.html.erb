@@ -1,0 +1,26 @@
+<h1>Editing City #<%= @city.id %></h1>
+
+
+<%= form_tag(city_url(@city), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @city.name %>
+  </div>
+
+  <div>
+    <%= label_tag :airport_id %><br />
+    <%= number_field_tag :airport_id, @city.airport_id %>
+  </div>
+
+  <div>
+    <%= label_tag :temp_id %><br />
+    <%= number_field_tag :temp_id, @city.temp_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update City" %>
+  </div>
+
+<% end %>

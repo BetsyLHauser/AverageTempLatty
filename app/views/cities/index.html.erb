@@ -1,0 +1,32 @@
+<h1>Cities</h1>
+
+<p><%= link_to 'Add a New City', new_city_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Airport</th>
+      <th>Temp</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @cities.each do |city| %>
+    <tr>
+      <td><%= city.name %></td>
+      <td><%= city.airport_id %></td>
+      <td><%= city.temp_id %></td>
+  
+      <td><%= link_to 'Show', city_url(city) %></td>
+      <td><%= link_to 'Edit', edit_city_url(city) %></td>
+      <td><%= link_to 'Destroy', city_url(city), method: 'delete', data: { confirm: "Do you really want to delete this city?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

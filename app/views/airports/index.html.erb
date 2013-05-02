@@ -1,0 +1,30 @@
+<h1>Airports</h1>
+
+<p><%= link_to 'Add a New Airport', new_airport_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Abbrev</th>
+      <th>City</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @airports.each do |airport| %>
+    <tr>
+      <td><%= airport.abbrev %></td>
+      <td><%= airport.city %></td>
+  
+      <td><%= link_to 'Show', airport_url(airport) %></td>
+      <td><%= link_to 'Edit', edit_airport_url(airport) %></td>
+      <td><%= link_to 'Destroy', airport_url(airport), method: 'delete', data: { confirm: "Do you really want to delete this airport?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
